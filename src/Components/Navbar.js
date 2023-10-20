@@ -45,6 +45,11 @@ function Navbar(){
                 </ul>
                 <Button class='signupbtn' to='SignUp' name='SignUp'/>
 
+
+                
+
+
+
             </nav>
         
         </>
