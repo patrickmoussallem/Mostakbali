@@ -5,10 +5,11 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes} from 'react-router-dom';
 import {Route} from 'react-router-dom';
 import Home from  './Components/pages/Home'
-import SignUp from  './Components/pages/SignUp'
+import SignUp from  './Components/pages/SignUp/SignUp'
 import test from  './Components/pages/test'
 import About from  './Components/pages/About'
 import Contactus from  './Components/pages/Contactus'
+import Signin from './Components/pages/Signin/Signin'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/About' exact Component={About} />
         <Route path='/Contactus' exact Component={Contactus} />
         <Route path='/SignUp' exact Component={SignUp} />
+        <Route path='/Signin' exact Component={Signin} />
 
       </Routes>
 
