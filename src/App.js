@@ -15,7 +15,7 @@ import Signin from './Components/pages/Signin/Signin'
 function App() {
   return (
     <Router>
-      <Navbar/>
+       
       <Routes>
         <Route path='/' exact Component={Home} />
         <Route path='/test' exact Component={test} />
