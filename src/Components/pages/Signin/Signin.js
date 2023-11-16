@@ -23,7 +23,7 @@ const Signin = () => {
 
             .then(res=>{
                 if(res.data=="exist"){
-                    history("/",{state:{id:email}})
+                    history("/",{state:{isLoggedin:true}})
                 }
                 else if(res.data=="notexist"){
                     alert("User does not exist")

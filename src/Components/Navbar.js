@@ -3,13 +3,18 @@ import React, { useState } from 'react';
 import { Button } from "./Button";
 import '../App.css';
 import "./Navbar.css"
+import { useLocation } from 'react-router-dom';
+
 
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const location = useLocation();
+  const { state } = location;
+  const isLoggedIn = state ? state : false;
+  const handlesignout = () => isLoggedIn(false);
 
   return (
     <>
@@ -47,7 +52,8 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <Button class='signupbtn' to='SignUp' name='SignUp' />
+        
+        {isLoggedIn ? <Button class='signupbtn' to='/' name= <i class="fa-solid fa-right-from-bracket fa-sm"> </i> onClick={handlesignout}/> : <Button class='signupbtn' to='signup' name='Sign up'/> }
       </nav>
     </>
   );
