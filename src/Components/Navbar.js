@@ -38,7 +38,7 @@ const Navbar = () => {
           </li>
           <li className='nav-item'>
             <a href='/about' className='nav-links' onClick={closeMobileMenu}>
-              About
+              About us
             </a>
           </li>
           <li className='nav-item'>
