@@ -56,7 +56,6 @@ video{
 .btns:hover {
     padding: 6px 18px ;
     transition: all 0.3s ease-out;
-    background-color: transparent;
     color: #fff;
     border-radius: 20px;
     border: 2px solid var(--primary);

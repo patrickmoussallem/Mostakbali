@@ -2,38 +2,46 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
+import BasicBreadcrumbs from '../../BasicBreadcrumbs';
 
 const SignUp = () => {
-	const [data, setData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		password: "",
-	});
-	const [error, setError] = useState("");
-	const navigate = useNavigate();
+	const history=useNavigate();
 
-	const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.name]: input.value });
-	};
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+	const [firstname, setFirstname]=useState('')
+	const [lastname, setLastname]=useState('')
+	const [username, setUsername]=useState('')
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		try {
-			const url = "http://localhost:8080/api/users";
-			const { data: res } = await axios.post(url, data);
-			navigate("/Signin");
-			console.log(res.message);
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
-		}
-	};
+    async function submit(e){
+        e.preventDefault();
+
+        try{
+
+            await axios.post("http://localhost:8000/signup",{
+                email,password,firstname,lastname,username
+            })
+            .then(res=>{
+                if(res.data=="exist"){
+                    alert("User already exists")
+                }
+                else if(res.data=="notexist"){
+                    history("/",{state:{id:email}})
+                }
+            })
+            .catch(e=>{
+                alert(e)
+                console.log(e);
+            })
+
+        }
+        catch(e){
+            console.log(e);
+
+        }
+
+    }
+
 
 	return (
 		<div className='signup_container'>
@@ -42,52 +50,65 @@ const SignUp = () => {
 					<h1>Welcome Back</h1>
 					<Link to="/Signin">
 						<button type="button" className='white_btn'>
-							Sing in
+							Sign in
 						</button>
 					</Link>
 				</div>
 				<div className='right'>
-					<form className='form_container' onSubmit={handleSubmit}>
+				<div className='breadcrumbsu'>
+						<BasicBreadcrumbs page='Sign Up'/>
+
+					</div>
+					<form className='form_container'>
 						<h1>Create Account</h1>
 						<input
 							type="text"
 							placeholder="First Name"
-							name="firstName"
-							onChange={handleChange}
-							value={data.firstName}
+							
+							onChange={(e) => { setFirstname(e.target.value) }} 
+							
 							required
 							className='input'
 						/>
 						<input
 							type="text"
 							placeholder="Last Name"
-							name="lastName"
-							onChange={handleChange}
-							value={data.lastName}
+							
+							onChange={(e) => { setLastname(e.target.value) }} 
+							
+							required
+							className='input'
+						/>
+						<input
+							type="text"
+							placeholder="Username"
+							
+							onChange={(e) => { setUsername(e.target.value) }} 
+							
 							required
 							className='input'
 						/>
 						<input
 							type="email"
 							placeholder="Email"
-							name="email"
-							onChange={handleChange}
-							value={data.email}
+							
+							onChange={(e) => { setEmail(e.target.value) }} 
+							
 							required
 							className='input'
 						/>
 						<input
 							type="password"
 							placeholder="Password"
-							name="password"
-							onChange={handleChange}
-							value={data.password}
+							
+							onChange={(e) => { setPassword(e.target.value) }} 
+							
 							required
 							className='input'
 						/>
-						{error && <div className='error_msg'>{error}</div>}
-						<button type="submit" className='green_btn'>
-							Sing Up
+						
+						<button type="submit" onClick={submit} className='green_btn'>
+							Sign Up
 						</button>
 					</form>
 				</div>

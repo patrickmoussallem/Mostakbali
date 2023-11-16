@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className='navbar'>
         <a href='#' className='navbar-logo'>
-          مستقبلي <i className="fa-solid fa-graduation-cap"></i>
+          Mostakbali <i className="fa-solid fa-graduation-cap"></i>
         </a>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -37,7 +37,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='#contact-us' className='nav-links' onClick={closeMobileMenu}>
+            <a href='/contactus' className='nav-links' onClick={closeMobileMenu}>
               Contact us
             </a>
           </li>

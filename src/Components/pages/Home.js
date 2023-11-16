@@ -8,15 +8,7 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
-      <section id="home">
-      </section>
-      <section id="test">
-      </section>
-      <section id="about">
-      </section>
-      <section id="contact-us">
-      </section>
-      <Footer id="footer"/>
+      <Footer />
       
     </>
   );

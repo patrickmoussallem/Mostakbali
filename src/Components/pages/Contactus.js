@@ -1,11 +1,14 @@
-
 import React from 'react';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
+import ContactForm from '../ContactForm';
 
 export default function Contactus(){
     return(
         <>
-        <h1 className='Contactus'>Contact-Us</h1>
-        
+        <Navbar />
+        <ContactForm/>
+        <Footer/>
         </>
 
 

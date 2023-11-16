@@ -79,7 +79,6 @@
 .signupbtn:hover {
     padding: 6px 18px ;
     transition: all 0.3s ease-out;
-    background-color: transparent;
     color: #fff;
     border-radius: 4px;
     border: 2px solid var(--primary);

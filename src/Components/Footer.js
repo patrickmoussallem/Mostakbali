@@ -49,7 +49,7 @@ function Footer() {
             <i class="fa-solid fa-graduation-cap"></i>
             </Link>
           </div>
-          <small class='website-rights'>  مستقبلي © 2023</small>
+          <small class='website-rights'>  Mostakbali © 2023</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
