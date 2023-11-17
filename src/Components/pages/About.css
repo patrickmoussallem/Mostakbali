@@ -35,3 +35,43 @@
     align-items: center;
     display: flex;
 }
+
+@media screen and (max-width: 1000px) {
+    .image {
+        margin: 0px;
+        border-radius: 5p;
+    }
+
+    .Aboutus {
+        padding: 4% 4%;
+        width: 50%;
+        height: 160vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    .Aboutus h1{
+        font-size: 2em;
+    }
+    .Aboutus hr{
+        margin-bottom: 20px;
+    }
+    
+    .Aboutus p{
+        font-size: 1em;
+    }
+    
+    .meet-our-team{
+        justify-content: center;
+        text-align: center;
+    }
+    .meet-our-team h2{
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    .cards{
+        align-items: center;
+        display: flex;
+    }
+
+}
