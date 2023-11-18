@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <a href='#' className='navbar-logo'>
+        <a href='/' className='navbar-logo'>
           Mostakbali <i className="fa-solid fa-graduation-cap"></i>
         </a>
         <div className='menu-icon' onClick={handleClick}>
