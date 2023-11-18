@@ -53,7 +53,7 @@ const Navbar = () => {
           </li>
         </ul>
         
-        {isLoggedIn ? <Button class='signupbtn' to='/' name= <i class="fa-solid fa-right-from-bracket fa-sm"> </i> onClick={handlesignout}/> : <Button class='signupbtn' to='signup' name='Sign up'/> }
+        {isLoggedIn ? <Button class='signupbtn' to='/' name= <i class="fa-solid fa-right-from-bracket fa-sm"> </i> onClick={handlesignout}/> : <Button class='signupbtn' to='/signup' name='Sign up'/> }
       </nav>
     </>
   );
