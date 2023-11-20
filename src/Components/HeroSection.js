@@ -6,9 +6,8 @@ import { useLocation } from 'react-router-dom';
 
 function HeroSection() {
 
-  const location = useLocation();
-  const { state } = location;
-  const isLoggedIn = state ? state : false;
+ 
+  let token = localStorage.getItem('token');
 
 
   return (
@@ -17,7 +16,7 @@ function HeroSection() {
         <h1>What do you want to be when you are older?</h1>
         <h3>find out by taking our test</h3>
         <div className='hero-btns'>
-            <Button class='btns' to={isLoggedIn ? 'test' : 'Signin'} name='GET STARTED'/>
+            <Button class='btns' to={token ? 'test' : 'Signin'} name='GET STARTED'/>
         </div>
       
     </div>

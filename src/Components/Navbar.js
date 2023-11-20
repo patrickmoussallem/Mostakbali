@@ -19,7 +19,7 @@ const Navbar = () => {
     console.log("signing out")
     localStorage.removeItem('token');
     token = null;
-    history('/');
+    
   } 
   
 
@@ -39,7 +39,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/test' className='nav-links' onClick={closeMobileMenu}>
+            <a href={token ? 'test' : 'signin'} className='nav-links' onClick={closeMobileMenu}>
               Our test
             </a>
           </li>
