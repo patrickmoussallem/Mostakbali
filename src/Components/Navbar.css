@@ -115,6 +115,7 @@
       padding: 2rem;
       width: 100%;
       display: table;
+      
     }
   
     .nav-links:hover {
@@ -155,6 +156,7 @@
       text-decoration: none;
       color: #fff;
       font-size: 1.5rem;
+      
     }
   
     .nav-links-mobile:hover {
