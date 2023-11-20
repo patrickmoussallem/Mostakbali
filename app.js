@@ -5,6 +5,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+const jwt = require('jsonwebtoken')
+
 
 
 
@@ -14,23 +16,24 @@ app.post("/Signin",async(req,res)=>{
     const{email,password}=req.body;
 
     try{
-        const check=await collection.findOne({email:email})
-        const checkpass = await collection.findOne({password:password})
+        const user =await collection.findOne({email:email})
 
-        if(check){
-            if(checkpass){
-                res.json("exist");
+        if (password == user.password){
+                            const token = jwt.sign(
+                    {
+                        userId: user._id,
+                        username: user.username,
+                        email: user.email,
+                    },
+                    'bchjidhifawf7629otrhgui3n398742ctc273ncthfdjfyjfyjy40x203f78h3n578fthfyfjtytyjr0ctvchc', 
+                    { expiresIn: '1h' } // Token expiration time (1 hour)
+                );
 
-            }else{
-                res.json("incorrectPassword");
-            }
-
-            
+                res.status(200).json({ message: "Login successful", token });
         }
         else{
-            res.json("notexist")
+            res.json("incorrectPassword");
         }
-
     }
     catch(e){
         console.error(e);

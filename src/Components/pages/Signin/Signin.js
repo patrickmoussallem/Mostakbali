@@ -6,6 +6,7 @@ import BasicBreadcrumbs from '../../BasicBreadcrumbs';
 
 
 
+
 const Signin = () => {
 	const history=useNavigate();
 
@@ -15,30 +16,30 @@ const Signin = () => {
     async function submit(e){
         e.preventDefault();
 
-        try{
+        try {
+			const res = await axios.post("http://localhost:8000/Signin", {
+				email,
+				password,
+			});
 
-            await axios.post("http://localhost:8000/Signin",{
-                email,password
-            })
+			console.log(res);
 
-            .then(res=>{
-                if(res.data=="exist"){
-                    history("/",{state:{isLoggedin:true}})
-                }
-                else if(res.data=="notexist"){
-                    alert("User does not exist")
-                }
-            })
-            .catch(e=>{
-                alert(e)
-                console.log(e);
-            })
+			if (res.data.message === "Login successful") {
+				console.log("Hello after history");
+				localStorage.setItem('token', res.data.token);
+				console.log(res.token);
+				
+				history("/");
+				
+			} else if (res.data === "notexist") {
+				alert("User does not exist");
+			}
 
-        }
-        catch(e){
-            console.log(e);
-
-        }
+		} catch (e) {
+			alert(e);
+			console.log(e);
+		}
+		
 
     }
 

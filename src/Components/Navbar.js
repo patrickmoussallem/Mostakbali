@@ -4,17 +4,24 @@ import { Button } from "./Button";
 import '../App.css';
 import "./Navbar.css"
 import { useLocation } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom"
 
 
 
 const Navbar = () => {
+  const history=useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const location = useLocation();
-  const { state } = location;
-  const isLoggedIn = state ? state : false;
-  const handlesignout = () => isLoggedIn(false);
+  let token = localStorage.getItem('token');
+  
+  function handlesignout(){
+    console.log("signing out")
+    localStorage.removeItem('token');
+    token = null;
+    history('/');
+  } 
+  
 
   return (
     <>
@@ -53,7 +60,11 @@ const Navbar = () => {
           </li>
         </ul>
         
-        {isLoggedIn ? <Button class='signupbtn' to='/' name= <i class="fa-solid fa-right-from-bracket fa-sm"> </i> onClick={handlesignout}/> : <Button class='signupbtn' to='signup' name='Sign up'/> }
+        {token ? (
+  <Button class='signupbtn' onClick={handlesignout}  name={<i className="fa-solid fa-right-from-bracket fa-sm"></i>} />
+) : (
+  <Button class='signupbtn' to='signup' name='Sign up' />
+)}
       </nav>
     </>
   );
