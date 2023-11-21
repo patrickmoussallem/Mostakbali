@@ -26,7 +26,7 @@
     box-sizing: border-box;
   }
   
-  button {
+  .test_btns {
     background-color: rgb(26, 23, 23);
     color: white;
     padding: 10px 20px;

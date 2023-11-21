@@ -48,7 +48,7 @@ const TestPage = () => {
             />
       </div>
       ))}
-      <button onClick={() => calculateScore()} disabled={submitted}>
+      <button className='test_btns' onClick={() => calculateScore()} disabled={submitted}>
         Submit
       </button>
       </div>
@@ -57,7 +57,7 @@ const TestPage = () => {
         <div className='result-container'>
           <h2>Result</h2>
           <p>Total Score: {tempScores.reduce((acc, score) => acc + (score || 0), 0)}</p>
-          <button onClick={() => retakeTest()}>Retake Test</button>
+          <button className='test_btns'  onClick={() => retakeTest()}>Retake Test</button>
         </div>
       )}
     </div>
