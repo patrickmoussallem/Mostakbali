@@ -54,9 +54,18 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-              Signup
-            </a>
+          {token ? (<a href='/' className='nav-links-mobile' onClick={handlesignout}> 
+
+            <i class="fa-solid fa-right-from-bracket fa-sm"> </i>
+            </a>)
+            :
+            (<a href='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
+            Signup
+            </a>)
+
+
+
+          }
           </li>
         </ul>
         
