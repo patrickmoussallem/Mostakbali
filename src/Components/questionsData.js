@@ -1,6 +1,6 @@
 const questions = [
     {
-      text: 'I like to solve puzzles for fun. is the capital of France?',
+      text: 'I like to solve puzzles for fun.',
       choices: [
         { text: 'Yes', score: 0 },
         { text: 'Sometimes', score: 0 },

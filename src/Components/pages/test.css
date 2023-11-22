@@ -27,7 +27,7 @@
   }
   
   .test_btns {
-    background-color: rgb(26, 23, 23);
+    background-color: #1888ff;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -35,7 +35,7 @@
     cursor: pointer;
   }
   
-  button:disabled {
+  .test_btns:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
