@@ -14,6 +14,13 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   let token = localStorage.getItem('token');
+ 
+
+  const setfromtest = () => {
+    closeMobileMenu();
+    {!token ? localStorage.setItem('fromtest', true) :  localStorage.setItem('fromtest', false)}
+
+  }
   
   function handlesignout(){
     console.log("signing out")
@@ -39,7 +46,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
-            <a href={token ? 'test' : 'signin'} className='nav-links' onClick={closeMobileMenu}>
+            <a href={token ? 'test' : 'signin'} className='nav-links' onClick={setfromtest}>
               Our test
             </a>
           </li>

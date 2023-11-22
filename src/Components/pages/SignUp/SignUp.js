@@ -6,7 +6,7 @@ import BasicBreadcrumbs from '../../BasicBreadcrumbs';
 
 const SignUp = () => {
 	const history=useNavigate();
-
+	const isfromtest = localStorage.getItem('fromtest');
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 	const [firstname, setFirstname]=useState('')
@@ -27,7 +27,8 @@ const SignUp = () => {
                 }
                 else if(res.data.message==="notexist"){
 					localStorage.setItem('token', res.data.token);
-                    history("/");
+                    {isfromtest ? history('/test') : history('/')};
+					localStorage.removeItem('fromtest');
                 }
             })
             .catch(e=>{
