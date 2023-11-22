@@ -9,6 +9,7 @@ import BasicBreadcrumbs from '../../BasicBreadcrumbs';
 
 const Signin = () => {
 	const history=useNavigate();
+	const isfromtest = localStorage.getItem('fromtest');
 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -29,7 +30,8 @@ const Signin = () => {
 				localStorage.setItem('token', res.data.token);
 				console.log(res.token);
 				
-				history("/");
+				{isfromtest ? history('/test') : history('/')};
+				localStorage.removeItem('fromtest');
 				
 			} else if (res.data === "notexist") {
 				alert("User does not exist");

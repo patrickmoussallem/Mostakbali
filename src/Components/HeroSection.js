@@ -8,6 +8,11 @@ function HeroSection() {
 
  
   let token = localStorage.getItem('token');
+  const setfromtest = () => {
+    
+    {!token ? localStorage.setItem('fromtest', true) :  localStorage.setItem('fromtest', false)}
+
+  }
 
 
   return (
@@ -16,7 +21,7 @@ function HeroSection() {
         <h1>What do you want to be when you are older?</h1>
         <h3>find out by taking our test</h3>
         <div className='hero-btns'>
-            <Button class='btns' to={token ? 'test' : 'Signin'} name='GET STARTED'/>
+            <Button class='btns' to={token ? 'test' : 'Signin'} name='GET STARTED' onClick={setfromtest}/>
         </div>
       
     </div>
