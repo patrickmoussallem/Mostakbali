@@ -1,0 +1,42 @@
+/* Add this to your existing CSS styles */
+.choice-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .choice-dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    width: 500px; /* Adjust width as needed */
+  }
+  
+  .choice-dropdown select:hover {
+    border-color: #aaa;
+    
+  }
+  
+  .choice-dropdown select:focus {
+    border-color: #555;
+    
+  }
+  
+  /* Custom arrow styling (optional) */
+  .choice-dropdown::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+    
+  }
+  

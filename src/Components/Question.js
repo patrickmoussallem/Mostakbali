@@ -1,6 +1,7 @@
 // Question.js
 import React from 'react';
 import Choice from './Choice';
+import './Question.css'
 
 const Question = ({ question, choices, onChoiceSelect, allowInteraction }) => {
     const handleChange = (e) => {
@@ -13,6 +14,7 @@ const Question = ({ question, choices, onChoiceSelect, allowInteraction }) => {
     return (
       <div>
         <h3>{question}</h3>
+        <div className='choice-dropdown'>
         <select onChange={handleChange} disabled={!allowInteraction}>
           <option value={-1}>Select an option</option>
           {choices.map((choice, index) => (
@@ -21,6 +23,7 @@ const Question = ({ question, choices, onChoiceSelect, allowInteraction }) => {
             </option>
           ))}
         </select>
+        </div>
       </div>
     );
   };

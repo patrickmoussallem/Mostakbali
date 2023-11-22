@@ -25,8 +25,9 @@ const SignUp = () => {
                 if(res.data=="exist"){
                     alert("User already exists")
                 }
-                else if(res.data=="notexist"){
-                    history("/",{state:{isLoggedin:true}})
+                else if(res.data.message==="notexist"){
+					localStorage.setItem('token', res.data.token);
+                    history("/");
                 }
             })
             .catch(e=>{
