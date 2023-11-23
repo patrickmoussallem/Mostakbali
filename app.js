@@ -85,33 +85,7 @@ app.post("/Signup", async (req, res) => {
 });
 
 
-app.post('/users', async (req, res) => {
-    const { page, limit, search } = req.body;
 
-    try {
-        let query = {};
-
-        if (search) {
-            query = { username: { $regex: search, $options: 'i' } };
-        }
-
-        const users = await collection.find(query)
-            .skip((page - 1) * limit)
-            .limit(limit)
-
-        const usersWithProjection = users.map(user => ({
-            username: user.username,
-            firstname: user.firstname,
-            lastname: user.lastname,
-            email: user.email,
-        }));
-
-        res.json(usersWithProjection);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Server Error' });
-    }
-});
 
 
 
