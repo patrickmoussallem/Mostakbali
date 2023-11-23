@@ -29,6 +29,7 @@ const SignUp = () => {
 					localStorage.setItem('token', res.data.token);
                     {isfromtest ? history('/test') : history('/')};
 					localStorage.removeItem('fromtest');
+					
                 }
             })
             .catch(e=>{

@@ -32,6 +32,7 @@ const Signin = () => {
 				
 				{isfromtest ? history('/test') : history('/')};
 				localStorage.removeItem('fromtest');
+			
 				
 			} else if (res.data === "notexist") {
 				alert("User does not exist");
