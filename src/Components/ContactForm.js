@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import './ContactForm.css';
 
 export default function ContactForm() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_lgaiump",
+        "template_f2g8jrg",
+        form.current,
+        "lQ1BFGc62BB7nVgyL"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+      
+  };
+
+
+
+
+
+  
   return (
     <div id="contact-us-form">
       <div className="contact-us-form">
         <h3>Contact Us</h3>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <label htmlFor="name">Your name:</label>
           <input type="text" name="name" id="name" placeholder="Your name.." />
 
