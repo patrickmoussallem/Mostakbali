@@ -22,13 +22,12 @@
   }
   
   .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
+    display: flex;
     grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 70vw;
-    justify-content: end;
+    justify-content: center;
     margin-right: 2rem;
   }
   

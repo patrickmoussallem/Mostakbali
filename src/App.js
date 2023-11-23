@@ -10,6 +10,7 @@ import test from  './Components/pages/test'
 import About from  './Components/pages/About'
 import Contactus from  './Components/pages/Contactus'
 import Signin from './Components/pages/Signin/Signin'
+import Users from './Components/pages/Users.js'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/Contactus' exact Component={Contactus} />
         <Route path='/SignUp' exact Component={SignUp} />
         <Route path='/Signin' exact Component={Signin} />
+        <Route path='/Users' exact Component={Users} />
 
       </Routes>
 
