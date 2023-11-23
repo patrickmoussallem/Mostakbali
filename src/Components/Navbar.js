@@ -61,6 +61,11 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
+            <a href='/Users' className='nav-links' onClick={closeMobileMenu}>
+            {token ? <i class="fa-solid fa-magnifying-glass"></i> : <div></div>}
+            </a>
+          </li>
+          <li className='nav-item'>
           {token ? (<a href='/' className='nav-links-mobile' onClick={handlesignout}> 
 
             <i class="fa-solid fa-right-from-bracket fa-sm"> </i>

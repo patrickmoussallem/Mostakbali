@@ -18,9 +18,9 @@
   }
   
   .profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 15%;
+    width: 200px;
+    height: 160px;
+    border-radius: 65%;
     border: 1px solid #ccc;
   }
   

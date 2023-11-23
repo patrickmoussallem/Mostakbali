@@ -5,12 +5,12 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Card from '../Card';
 import patphoto from '../../images/patimage.jpeg'
-import taniosphoto from '../../images/taniosimgae.jpeg'
+import taniosphoto from '../../images/taniosimage.jpeg'
 
 const use1 = {
     name: 'Patrick Moussallem',
     description: 'Founder of Mostakbali and Software Engineer at Saint-Joseph University',
-    photoUrl: {patphoto},
+    photoUrl: patphoto,
     twitterUrl: 'https://twitter.com/patrickmslm',
     facebookUrl: 'https://www.facebook.com/johndoe',
     instagramUrl: 'https://www.instagram.com/patrickmoussallem/',
@@ -19,7 +19,7 @@ const use1 = {
   const user2 = {
     name: 'Tanios Bou Diwan',
     description: 'co-Founder of Mostakbali and Software Engineer at Saint-Joseph University',
-    photoUrl: {taniosphoto},
+    photoUrl: taniosphoto,
     twitterUrl: 'https://twitter.com/lebanese_wise',
     facebookUrl: 'https://www.facebook.com/tanios.boudiwan',
     instagramUrl: 'https://www.instagram.com/tanios_boudiwan/',

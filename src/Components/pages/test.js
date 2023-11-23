@@ -63,12 +63,13 @@ const TestPage = () => {
   const history=useNavigate();
 
   const retakeTest = () => {
+    console.log("retaking.....")
     // Reset the state for a new test
     setTempScores([]);
     setSubmitted(false);
     setError(null); // Clear any previous errors
     setRecommendation(null);
-    history('/test');
+    window.location.reload();
   };
 
   return (
