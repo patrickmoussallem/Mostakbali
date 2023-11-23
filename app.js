@@ -10,9 +10,6 @@ const jwt = require('jsonwebtoken')
 
 
 
-
-
-
 app.post("/Signin",async(req,res)=>{
     const{email,password}=req.body;
 
@@ -50,9 +47,10 @@ app.post("/Signup", async (req, res) => {
     const { email, password, firstname, lastname, username } = req.body;
 
     try {
-        const check = await collection.findOne({ email: email });
+        const emailcheck = await collection.findOne({ email: email });
+        const usernamecheck = await collection.findOne({ username: username });
 
-        if (check) {
+        if (emailcheck || usernamecheck) {
             res.json("exist");
         } else {
             const salt = await bcrypt.genSalt(10);
@@ -85,6 +83,36 @@ app.post("/Signup", async (req, res) => {
         res.status(500).json({ error: 'An error occurred' });
     }
 });
+
+
+app.post('/users', async (req, res) => {
+    const { page, limit, search } = req.body;
+
+    try {
+        let query = {};
+
+        if (search) {
+            query = { username: { $regex: search, $options: 'i' } };
+        }
+
+        const users = await collection.find(query)
+            .skip((page - 1) * limit)
+            .limit(limit)
+
+        const usersWithProjection = users.map(user => ({
+            username: user.username,
+            firstname: user.firstname,
+            lastname: user.lastname,
+            email: user.email,
+        }));
+
+        res.json(usersWithProjection);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server Error' });
+    }
+});
+
 
 
 app.listen(8000,()=>{
