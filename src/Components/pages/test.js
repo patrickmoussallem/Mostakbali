@@ -48,7 +48,7 @@ const TestPage = () => {
       { min: 41, max: 80, recommendation: 'Environmental Science' },
       { min: 81, max: 120, recommendation: 'Political Science' },
       { min: 121, max: 160, recommendation: 'Linguistics' },
-      { min: 1601, max: 200, recommendation: 'Biomedical Engineering' },
+      { min: 161, max: 200, recommendation: 'Biomedical Engineering' },
       { min: 201, max: 240, recommendation: 'Marketing' },
       { min: 241, max: 280, recommendation: 'Business Analytics' },
       { min: 281, max: 300, recommendation: 'Aerospace Engineering' },
