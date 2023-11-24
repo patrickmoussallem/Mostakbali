@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom"
 import Navbar from '../Navbar'
+import { SearchBar } from '../Searchbar';
+
 
 
 export default function Users(){
@@ -8,7 +10,11 @@ export default function Users(){
         <>
         <Navbar/>
         <div>
-            <h1>Search Users</h1>
+            <h1>Search Universities</h1>
+            <div className='Search-bar'>
+            <SearchBar/>
+            </div>
+
 
 
 

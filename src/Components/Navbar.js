@@ -61,7 +61,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/Users' className='nav-links' onClick={closeMobileMenu}>
+            <a href='/Search' className='nav-links' onClick={closeMobileMenu}>
             {token ? <i class="fa-solid fa-magnifying-glass"></i> : <div></div>}
             </a>
           </li>

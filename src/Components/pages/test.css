@@ -16,16 +16,7 @@
     font-size: 3em;
   }
   
-  /* select {
-    width: 50%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-   */
+
   .test_btns {
     background-color: #1888ff;
     color: white;
@@ -69,11 +60,11 @@
 
 .modal {
   background-color: #fff;
-  padding: 30px; /* Increase padding for a larger modal */
-  border-radius: 12px; /* Increase border radius for rounded corners */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increase box shadow for a more prominent effect */
+  padding: 50px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   text-align: center;
-  font-size: 18px; /* Increase font size for text inside the modal */
+  font-size: 18px; 
 }
 
 .question-container {
